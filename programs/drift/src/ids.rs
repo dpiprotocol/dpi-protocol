@@ -76,14 +76,15 @@ pub mod marinade_mainnet {
 pub mod admin_hot_wallet {
     use solana_program::declare_id;
     #[cfg(not(feature = "anchor-test"))]
-    declare_id!("5hMjmxexWu954pX9gB9jkHxMqdjpxArQS2XdvkaevRax");
+    declare_id!("6QKrtaitNvqXhYzxoLqyoEbDnm6wTuzxe56WVhLDGhRB");
     #[cfg(feature = "anchor-test")]
-    declare_id!("1ucYHAGrBbi1PaecC4Ptq5ocZLWGLBmbGWysoDGNB1N");
+    declare_id!("6QKrtaitNvqXhYzxoLqyoEbDnm6wTuzxe56WVhLDGhRB");
 }
 
 pub mod if_rebalance_wallet {
     use solana_program::declare_id;
-    declare_id!("BuynBZjr5yiZCFpXngFQ31BAwechmFE1Ab6vNP3f5PTt");
+    // DPI: use admin hot wallet for now (single-admin setup)
+    declare_id!("6QKrtaitNvqXhYzxoLqyoEbDnm6wTuzxe56WVhLDGhRB");
 }
 
 pub mod lighthouse {
@@ -95,25 +96,25 @@ pub mod mm_oracle_crank_wallet {
     use solana_program::declare_id;
     #[cfg(not(feature = "anchor-test"))]
     #[cfg(feature = "mainnet-beta")]
-    declare_id!("uZ1N4C9dc71Euu4GLYt5UURpFtg1WWSwo3F4Rn46Fr3");
+    declare_id!("6QKrtaitNvqXhYzxoLqyoEbDnm6wTuzxe56WVhLDGhRB");
     #[cfg(not(feature = "anchor-test"))]
     #[cfg(not(feature = "mainnet-beta"))]
-    declare_id!("8X35rQUK2u9hfn8rMPwwr6ZSEUhbmfDPEapp589XyoM1");
+    declare_id!("6QKrtaitNvqXhYzxoLqyoEbDnm6wTuzxe56WVhLDGhRB");
     #[cfg(feature = "anchor-test")]
-    declare_id!("1ucYHAGrBbi1PaecC4Ptq5ocZLWGLBmbGWysoDGNB1N");
+    declare_id!("6QKrtaitNvqXhYzxoLqyoEbDnm6wTuzxe56WVhLDGhRB");
 }
 
 pub mod amm_spread_adjust_wallet {
     use solana_program::declare_id;
     #[cfg(not(feature = "anchor-test"))]
-    declare_id!("w1DrTeayRMutAiwzfJfK9zLcpkF7RzwPy1BLCgQA1aF");
+    declare_id!("6QKrtaitNvqXhYzxoLqyoEbDnm6wTuzxe56WVhLDGhRB");
     #[cfg(feature = "anchor-test")]
-    declare_id!("1ucYHAGrBbi1PaecC4Ptq5ocZLWGLBmbGWysoDGNB1N");
+    declare_id!("6QKrtaitNvqXhYzxoLqyoEbDnm6wTuzxe56WVhLDGhRB");
 }
 
 pub mod lp_pool_swap_wallet {
     use solana_program::declare_id;
-    declare_id!("25qbsE2oWri76c9a86ubn17NKKdo6Am4HXD2Jm8vT8K4");
+    declare_id!("6QKrtaitNvqXhYzxoLqyoEbDnm6wTuzxe56WVhLDGhRB");
 }
 
 pub mod dflow_mainnet_aggregator_4 {
@@ -128,7 +129,7 @@ pub mod titan_mainnet_argos_v1 {
 
 pub mod lp_pool_hot_wallet {
     use solana_program::declare_id;
-    declare_id!("GP9qHLX8rx4BgRULGPV1poWQPdGuzbxGbvTB12DfmwFk");
+    declare_id!("6QKrtaitNvqXhYzxoLqyoEbDnm6wTuzxe56WVhLDGhRB");
 }
 
 pub const WHITELISTED_SWAP_PROGRAMS: &[solana_program::pubkey::Pubkey] = &[
