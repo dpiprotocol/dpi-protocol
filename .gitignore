@@ -13,3 +13,14 @@ sdk/src/**/*.js.map
 migrations
 /**/*.env
 vendor
+CLAUDE.md
+scripts/deploy/
+
+# Keypairs & secrets — NEVER commit
+*-keypair.json
+*-keypair*.json
+*-keypair*.json.bak
+*.key
+*.pem
+**/*secret*
+deploy-scripts/*.log

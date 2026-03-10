@@ -1,0 +1,8 @@
+deploy-scripts/
+scripts/deploy/
+scripts/devnet/
+scripts/init-devnet.ts
+scripts/repeg-market.ts
+scripts/test-spot-market.ts
+scripts/fresh-devnet.sh
+tests/dpiIntegration.ts
