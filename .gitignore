@@ -24,3 +24,13 @@ scripts/deploy/
 *.pem
 **/*secret*
 deploy-scripts/*.log
+
+# DPI internal scripts & docs — not part of the public fork
+deploy-scripts/
+scripts/devnet/
+scripts/fresh-devnet.sh
+scripts/init-devnet.ts
+scripts/repeg-market.ts
+scripts/test-spot-market.ts
+tests/dpiIntegration.ts
+CAVEATS.md
