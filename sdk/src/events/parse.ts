@@ -1,7 +1,7 @@
 import { Program, Event } from '@coral-xyz/anchor';
 import { CuUsageEvent } from './types';
 
-const driftProgramId = 'dRiftyHA39MWEi3m9aunc5MzRF1JYuBsbn6VPcn33UH';
+const driftProgramId = '2ya1VK7Agt9aHVy6DsggZq4QRJx2tQ2Rcjjnu4jHW1os';
 const PROGRAM_LOG = 'Program log: ';
 const PROGRAM_INSTRUCTION = 'Program log: Instruction: ';
 const PROGRAM_DATA = 'Program data: ';
