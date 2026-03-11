@@ -1,102 +1,85 @@
 <div align="center">
-  <img height="120x" src="https://uploads-ssl.webflow.com/611580035ad59b20437eb024/616f97a42f5637c4517d0193_Logo%20(1)%20(1).png" />
+  <img width="100%" src="https://raw.githubusercontent.com/dpiprotocol/dpiprotocol/main/banner.png" />
 
-  <h1 style="margin-top:20px;">Drift Protocol v2</h1>
+  <h1 style="margin-top:20px;">DPI Protocol</h1>
 
   <p>
-    <a href="https://drift-labs.github.io/v2-teacher/"><img alt="Docs" src="https://img.shields.io/badge/docs-tutorials-blueviolet" /></a>
-    <a href="https://discord.com/channels/849494028176588802/878700556904980500"><img alt="Discord Chat" src="https://img.shields.io/discord/889577356681945098?color=blueviolet" /></a>
-    <a href="https://opensource.org/licenses/Apache-2.0"><img alt="License" src="https://img.shields.io/github/license/project-serum/anchor?color=blueviolet" /></a>
+    <strong>Dubai Property Index Perpetual Futures on Solana</strong>
+  </p>
+
+  <p>
+    <a href="https://dpi.market"><img alt="Website" src="https://img.shields.io/badge/website-dpi.market-blueviolet" /></a>
+    <a href="https://x.com/dpiperp"><img alt="Twitter" src="https://img.shields.io/badge/twitter-@dpiperp-blueviolet" /></a>
+    <a href="https://opensource.org/licenses/Apache-2.0"><img alt="License" src="https://img.shields.io/github/license/dpiprotocol/dpi-protocol?color=blueviolet" /></a>
   </p>
 </div>
 
-# Drift Protocol v2
+## What is DPI Protocol?
 
-This repository provides open source access to Drift V2's Typescript SDK, Solana Programs, and more.
+DPI Protocol introduces **perpetual futures for the Dubai Property Index** — enabling anyone to trade the direction of Dubai real estate without buying or selling physical property.
 
-Integrating Drift? [Go here](./sdk/README.md)
+- **Go Long** — Bullish on Dubai? Ride the upside.
+- **Go Short** — Think the market is overheated? Profit from corrections.
+- **Hedge** — Homeowners can protect their exposure without selling.
 
-# SDK Guide
+No deeds. No brokers. No waiting months to exit. For the first time, Dubai real estate becomes a **two-way market**.
 
-SDK docs can be found [here](./sdk/README.md)
+## Architecture
 
-# Example Bot Implementations
+DPI Protocol is built on a customized fork of [Drift Protocol v2](https://github.com/drift-labs/drift-protocol-v2), adapted for Real World Asset (RWA) trading. Key modifications include:
 
-Example bots (makers, liquidators, fillers, etc) can be found [here](https://github.com/drift-labs/keeper-bots-v2)
+- **Custom Oracle** — Aggregates housing prices from multiple reputable Dubai real estate services, providing real-time data on average square meter values, regional variations, and market trends.
+- **RWA Tokenization** — Tokenizes "square Dubai meters" directly tied to the Dubai Property Index, enabling perpetual futures trading.
+- **Solana-Native** — Blazing speed, minimal fees, and scalability for high-volume trading.
 
-# Building Locally
+## Building Locally
 
-Note: If you are running the build on an Apple computer with an M1 chip, please set the default rust toolchain to `stable-x86_64-apple-darwin`
+### Prerequisites
+
+- Rust toolchain (stable)
+- Solana CLI
+- Anchor framework
+- Node.js + Yarn
+
+> **Note:** On Apple M1 chips, set the default Rust toolchain to `stable-x86_64-apple-darwin`:
+> ```bash
+> rustup default stable-x86_64-apple-darwin
+> ```
+
+### Compile Programs
 
 ```bash
-rustup default stable-x86_64-apple-darwin
-```
-
-## Compiling Programs
-
-```bash
-# build v2
 anchor build
-# install packages
 yarn
-# build sdk
 cd sdk/ && yarn && yarn build && cd ..
 ```
 
-## Running Rust Test
+### Run Tests
 
 ```bash
+# Rust tests
 cargo test
-```
 
-## Running Javascript Tests
-
-```bash
+# TypeScript tests
 bash test-scripts/run-anchor-tests.sh
 ```
 
-# Development (with devcontainer)
+## SDK
 
-We've provided a devcontainer `Dockerfile` to help you spin up a dev environment with the correct versions of Rust, Solana, and Anchor for program development.
+The SDK is located in the [`./sdk`](./sdk) directory. It is built on top of the [Drift Protocol v2 SDK](https://drift-labs.github.io/v2-teacher/) — refer to their documentation for general SDK concepts, API reference, and usage examples.
 
-Build the container and tag it `drift-dev`:
-```
-cd .devcontainer && docker build -t drift-dev .
-```
+## Keeper Bots
 
-Open a shell to the container:
-```
-# Find the container ID first
-docker ps
+Keeper bot implementations (fillers, liquidators, etc.) live in the [dpi-keepers](https://github.com/dpiprotocol/dpi-keepers) repository.
 
-# Then exec into it
-docker exec -it <CONTAINER_ID> /bin/bash
-```
+## Vision
 
-Alternatively use an extension provided by your IDE to make use of the dev container. For example on vscode/cursor:
+Dubai is just the beginning. DPI Protocol is designed to scale worldwide — enabling hedging for real estate markets in New York, London, Singapore, and beyond. Real estate volatility is a universal stressor; crypto provides the borderless access, 24/7 liquidity, and smart-contract automation to democratize protection.
 
-```
-1. Press Ctrl+Shift+P (or Cmd+Shift+P on Mac)
-2. Type "Dev Containers: Reopen in Container"
-3. Select it and wait for the container to build
-4. The IDE terminal should be targeting the dev container now
-```
+## Acknowledgments
 
-Use the dev container as you would a local build environment:
-```
-# build program
-anchor build
+DPI Protocol is a fork of [Drift Protocol v2](https://github.com/drift-labs/drift-protocol-v2), customized for Real World Asset futures trading. We are grateful to the Drift team for building battle-tested infrastructure.
 
-# update idl
-anchor build -- --features anchor-test && cp target/idl/drift.json sdk/src/idl/drift.json
+## License
 
-# run cargo tests
-cargo test
-
-# run typescript tests
-bash test-scripts/run-anchor-tests.sh
-```
-
-# Bug Bounty
-
-Information about the Bug Bounty can be found [here](./bug-bounty/README.md)
+Apache 2.0
